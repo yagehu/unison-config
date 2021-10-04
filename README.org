@@ -1,0 +1,30 @@
+* My Union config
+
+Put =unison.service= in =$HOME/.config/systemd/user=. You can symlink
+it:
+
+#+BEGIN_SRC shell
+mkdir -p ~/.config/systemd/user
+ln -s unison.service ~/.config/systemd/user/unison.service
+#+END_SRC
+
+Start the service and check its status:
+
+#+BEGIN_SRC shell
+systemctl --user start unison.service
+systemctl --user status unison.service
+#+END_SRC
+
+If it does not exit with an error code, go ahead and enable it:
+
+#+BEGIN_SRC shell
+systemctl --user enable unison.service
+#+END_SRC
+
+You may need to create this file because per-user Systemd services do
+not inherit any environment variables:
+
+#+BEGIN_SRC
+mkdir -p ~/.config/environment.d
+echo "HOME=/home/$USER" > ~/.config/environment.d/.conf
+#+END_SRC
