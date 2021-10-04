@@ -1,0 +1,5 @@
+root = sync
+root = ssh://polar.huyage.dev/sync
+
+repeat = watch
+sshargs = -oIdentityFile=$HOME/.ssh/id_rsa
