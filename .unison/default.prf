@@ -5,3 +5,19 @@ repeat = watch
 sshargs = -oIdentityFile=$HOME/.ssh/id_rsa
 
 ignore = Name .stack-work
+
+# Emacs
+ignore = Name *.eld
+ignore = Name .cache
+ignore = Name .lsp-session-v1
+ignore = Name .org-id-locations
+ignore = Name auto-save-list
+ignore = Name bookmarks
+ignore = Name org-roam.db
+ignore = Name recentf
+ignore = Name session.*
+ignore = Name straight
+
+# Org
+ignore = Name org/*.html
+ignore = Name org/*.pdf
